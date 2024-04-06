@@ -21,8 +21,34 @@
                     <h3 class="text-2xl">Zonne panelen</h3>
                     @livewire('panel-switcher', ['subscription' => $subscription])
 
+                    <div>
+                        <p>Weather type: <span id="weatherType"></span></p>
+                        <img src="" id="weatherImg" alt="">
+                        <p id="weatherTemp"></p>
+                        <p>Verwachte opbrengst van vandaag: <span id="panelsKwh"></span>kwh</p>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // 6485f382b6a341ca9d495540240503
+        // http://api.weatherapi.com/v1/current.json?key=6485f382b6a341ca9d495540240503&q=Belgium
+
+        fetch('http://api.weatherapi.com/v1/current.json?key=6485f382b6a341ca9d495540240503&q=Breda&aqi=no')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                document.getElementById('weatherType').innerText = data.current.condition.text;
+                document.getElementById('weatherImg').src = data.current.condition.icon;
+                document.getElementById('weatherTemp').innerText = data.current.temp_c + '°C';
+                document.getElementById('panelsKwh').innerText = calculatePanelEnergy(data.current.temp_c, data.current.condition.text, {{ $subscription->panels->count() }});
+            });
+
+            function calculatePanelEnergy(temp, type, panelCount) {
+                    
+            }
+    </script>
 </x-app-layout>

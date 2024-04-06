@@ -75,3 +75,121 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+Conventies
+ - Naamgeving van variabelen
+ - Bestands namen en structuur
+ - Welke packages je gebruikt (Bijv. Tailwind of normale CSS)
+ - Database tabellen/fields benaming (En bijv. altijd een id)
+ - Curly brackets op volgende regel of zelfde regel
+ - PSR-standaarden (Globale PHP conventies)
+
+Werkafspraken
+ - Wat doe je als je later komt
+ - Hoe het reviewen er uit ziet van een ticket
+ - Hoe doen we pauzes
+ - Verantwoordelijkheden per persoon (Bijv. iemand checkt alles van de databases na, soort rollen)
+ - Wat doe je als het niet goed gaat in het groepje
+
+Definition of Done
+ - Afsprakenlijst van wat er moet gebeuren voordat iederen ticket op afgerond gezet mag worden
+ - Voorbeelden: 
+    . Ticket moet gereviewed worden door iemand anders
+    . De opgeleverde code voldoet aan de conventies
+    . Alle acceptatiecriteria is behaald van de user story
+    . De ticket staat in de master branch (iedereen kan het pullen en testen)
+
+User stories
+ - Format: Als (rol) wil ik (functie), zodat (reden)
+ - Maak de lijst van user stories geordend (Bijv. per rol een lijstje of per entiteit)
+ - Alle user stories is je product backlog
+
+Planning
+ - Je gaat niet heel de product backlog maken
+ - Maak een sprint backlog: verzamel alle user stories die je kan uitwerken in deze sprint
+    . Wordt gekeken of je de juiste user stories kiest, zodat je de kern van de applicatie werkend heb
+    . Elke user story in de sprint planning krijgt minimaal 4 acceptatiecriteria (Wanneer is de userstory af?)
+ - Kanban bord (Kolom ideeën: Product backlog, Todo (Sprint planning), In progress, Ready for review, In review, Done en eventueel een kolom voor tickets waar niemand mee verder komt)
+ - Wordt er actief bijgehouden wie wat aan het doen is op het kanban bord
+
+--- 
+
+Wireframes
+ - Je werkt een aantal user stories uit in de flow van de user story in wireframes, je hoeft niet heel de applicatie te maken (Bijv. geen login)
+
+Activiteitendiagram (swimming lanes)
+ - Uitwerken van de flow van een functionaliteit
+ - Maak alleen activiteitendiagrammen van functionaliteiten die moeilijk kunnen zijn. Of kies iets waar iedereen anders over kan denken (Geen inloggen)
+ - Voorbeeld webshop betaling:
+    . Gebruiker vult zijn gegevens in
+    . Gebruiker klikt op volgende
+    . Validatie check: Zijn de gegeven juist
+    . Ja -> doe dit. Nee -> doe dat 
+    . Etc...
+ - Geef boven de swimming lanes de user story aan waar het om gaat (de functionaliteit)
+ - Er is maar één startpunt en eindpunt
+
+ERD
+ - Naamgeving tabellen en fields
+ - Aangeven of het PK of FK is
+ - Pijlen many to one, many to many (koppeltabel)
+ - Wat voor datatype het gaat worden in de database
+ (- Many is altijd de 3 poot symbool en wijst altijd naar de FK)
+
+Sitemap
+ - Hiearchie van de website
+ - Homepagina -> waar kan je vanaf hier heen. Dit steeds verder uitwerken naar beneden
+ - Pluspunt: 2 sitemaps: Als je bent ingelogd en niet ingelogd
+
+--- 
+
+Code / Ontwikkelen
+ - Is de code efficiënt geschreven? (Bijv. database queries)
+ - Is er nagedacht over validaties
+ - Staan er logische comments (Bijv. bij een rare oplossing voor iets wat niet gelijk duidelijk is voor een ander)
+ - Of variable en functie namen duidelijk zijn (Beschrijven ze zichzelf goed genoeg)
+ - Is de projectstructuur en bestandenstructuur netjes
+
+Git
+ - Commits: zijn de descriptions duidelijk voor wat je hebt gedaan
+ - Werk je netjes in branches (Tenzij anders aangegeven in de conventies)
+
+Daily standups
+ - Je begint elke dag met een daily standup
+    . Je zegt wat je gister heb gedaan, wat je gaat doen en of je ergens nog gaat tegen aanlopen
+ - Beoordeling:
+    . Niet te lang - 5-10 min (Stopwatch)
+    . Reageren op elkaar en niet alleen luisteren
+
+Tests
+ - Komer er per test de acceptatie criteria terug
+ - Komt er validatie checks terug? Edge cases bedenken per user story
+ - Per test bepalen ja of nee
+ - Ruimte voor opmerkingen, ook als de test slaagt
+ - Uit de testen komt een testrapport
+
+Retrospective
+ - Ene laatste dag van het examen
+ - Einde van een sprint ga je met zijn allen doorlopen hoe het is gegaan
+ - Doel: Je reflecteert op je zelf. Wat heb je goed gedaan, wat minder. En hoe kan je het oplossen.
+ - Ook als groep kijken wat er goed en minder ging. Hoe ga je dit volgende keer voorkomen.
+
+Presentatie / Individuele oplevering
+ - Laatste dag
+ - Eerst met het groepje demonstreren (Mag het presentatie ervoor, duurt ongeveer 10 min)
+ - Beoordeling presentatie:
+    . Genoeg oogcontact met de klant. Je geeft een demonstratie aan de klant. Interactie
+    . Iedereen moet een rol hebben in de presentatie
+    . Hoe ga je om met errors/bugs? Bijv. Heb je gedacht aan oplossingen en noem deze. Niet de error uitleggen aan de klant.
+    . Presenteer het alsof je het aan het verkopen bent
+ - Individuele oplevering:
+    . Meer technisch
+    . Begrijp je het programma volledig
+    . Vragen over functies hoe het werkt
+    . Wat als je meer tijd had om dit beter te maken?
+    . Wat is een stuk code waar je trots op bent?
+
+ 

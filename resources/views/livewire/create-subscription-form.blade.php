@@ -36,6 +36,7 @@
         <div class="mb-4">
             <label for="solar_panel_system_id">Solar panel system</label>
             <select wire:change="changeSystem(event.target.value)" name="solar_panel_system_id" id="solar_panel_system_id" class="w-full border-2 rounded-lg">
+                <option disabled selected value="">Maak een keuze</option>
                 @foreach($solarPanelSystems as $solarPanelSystem)
                     <option value="{{$solarPanelSystem->id}}">{{$solarPanelSystem->name}}</option>
                 @endforeach
@@ -45,7 +46,8 @@
         @if($panelCount > 1)
             <div class="mb-4">
                 <label for="panelCount">Panel</label>
-                <input type="number" max="{{$panelCount}}" name="" id="">
+                <input wire:model="panelInput" wire:keyup="checkMaxPanels()" type="number" max="{{$panelCount}}" min="0" name="panel_count" id="">
+                <p class="text-red-500">{{ $warning }}</p>
             </div>
         @endif
 

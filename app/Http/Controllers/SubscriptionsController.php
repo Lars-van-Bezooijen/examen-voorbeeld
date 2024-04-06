@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\Panel;
 use App\Models\SolarPanelSystem;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
@@ -44,10 +45,17 @@ class SubscriptionsController extends Controller
                 'city' => $request->city,
             ]);
 
-            Subscription::create([
+            $subscription = Subscription::create([
                 'solar_panel_system_id' => $request->solar_panel_system_id,
                 'customer_id' => $customer->id,
             ]);
+
+            $panels = Panel::where('solar_panel_system_id', $request->solar_panel_system_id)
+                ->whereNull('subscription_id')
+                ->limit($request->panel_count)
+                ->update([
+                    'subscription_id' => $subscription->id,
+                ]);
         });
 
 

@@ -9,6 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
+                <a href="{{ route('subscriptions.create') }}" class="bg-blue-500 rounded-md p-2 text-white font-bold mx-4">Create</a>
+
                     <ul>
                         @forelse($subscriptions as $subscription)
                             <li class="m-4 border-2 p-4 text-gray-900">

@@ -11,6 +11,8 @@ class CreateSubscriptionForm extends Component
     public $solarPanelSystems = [];
     public $description = 'Dit is het aanmaakform voor een subcription';
     public $panelCount;
+    public $warning = '';
+    public $panelInput;
 
 
     public function mount() {
@@ -26,8 +28,20 @@ class CreateSubscriptionForm extends Component
         ->whereNull('subscription_id')
         ->count();
 
+        if ($this->panelCount < $this->panelInput) {
+            $this->panelInput = $this->panelCount;
+        }
+
         $this->description = 'Je hebt een systeem gekozen: ' . $type .
                             '. Hiervan zijn ' . $this->panelCount . ' panelen voor beschikbaar...';
+    }
+
+    public function checkMaxPanels() {
+        if ($this->panelInput > $this->panelCount) {
+            $this->warning = 'Het aantal panelen mag niet hoger zijn dan ' . $this->panelCount;
+        } else {
+            $this->warning = '';
+        }
     }
 
     public function render()
